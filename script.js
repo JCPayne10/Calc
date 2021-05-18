@@ -76,12 +76,13 @@ class Calculator {
 
     updateDisplay() {
         this.currentOperandTextElement.innerText = 
-         this.getDisplayNumber(this.currentOperand)
+        this.getDisplayNumber(this.currentOperand)
         if (this.operation != null) {
-         this.previousOperandTextElement = 
-            `${this.previousOperand} ${this.operation}`
+            this.previousOperandTextElement.innerText = 
+            `${this.getDisplayNumber(this.previousOperand)} ${this.operation}`
+        }   else {
+            this.previousOperandTextElement.innerText = ''
         }
-        this.previousOperandTextElement.innerText = this.previousOperand
     }
 }
 
